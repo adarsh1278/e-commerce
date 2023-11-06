@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image.js";
 import Product from '../Product/page'; 
 import { AddCartProvider } from '../addCartProvider';
-import Link from 'next/link';
+
 function land() {
   const words = ["BH", "AR", "AT"];
   const colors = ["red", "white", "green"];
