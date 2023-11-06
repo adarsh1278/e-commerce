@@ -4,7 +4,7 @@ import { addCartContext } from '../context';
 import Notification from '../Notification/page';
 import ProductView from '../ProductView/page'; // Import ProductView component
 import Link from 'next/link';
-const Product = ({ imageUrl, productName, price, productDescription }) => {
+const Product = ({ imageUrl, productName, price, productDescription ,longdesc}) => {
   const obj = useContext(addCartContext);
   const [notificationMessage, setNotificationMessage] = useState('');
   const [showNotification, setShowNotification] = useState(false);
@@ -40,7 +40,7 @@ const Product = ({ imageUrl, productName, price, productDescription }) => {
   obj.setImge(imageUrl)
 
    obj.setPrice(price)
-   obj.setDesc(productDescription)
+   obj.setDesc(longdesc)
 
    console.log(obj.name);
   //  console.log(obj.img)

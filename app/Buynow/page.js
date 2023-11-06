@@ -1,9 +1,13 @@
 "use client"
 
 
-import React, { useState } from "react";
-
-const CheckoutForm = ({ total }) => {
+import React, { useContext, useState } from "react";
+import { AddCartProvider } from "../addCartProvider";
+import { addCartContext } from "../context";
+const Buynowform = () => {
+   
+    const obj = useContext(addCartContext)
+let total = obj.price;
   const [cart, setCart] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -34,7 +38,8 @@ const CheckoutForm = ({ total }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 shadow-lg rounded-md">
+    <div className=" pt-24">
+    <div className="max-w-md mx-auto p-6 rounded-md shadow-2xl drop-shadow-2xl  m-3 mb-7">
       <h1 className="text-2xl font-bold mb-4">Checkout</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -120,9 +125,10 @@ const CheckoutForm = ({ total }) => {
         </button>
       </form>
     </div>
+    </div>
   );
 };
 
-export default CheckoutForm;
+export default Buynowform;
 
 

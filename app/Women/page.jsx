@@ -9,6 +9,7 @@ const womenProducts = [
     name: 'Elegant Dress',
     price: 49.99,
     description: 'A beautiful and elegant dress for any special occasion.',
+    longdesc: "jhdsfbjdshjdfsvhsdhuisbhb uysguifwevfshfvudfeougervehbvv uyfyguwegfyuwfebsgyasubfhawufgwofweovsvsyfweyu"
   },
   {
     imgSrc:
@@ -16,6 +17,7 @@ const womenProducts = [
     name: 'Casual Jeans',
     price: 34.99,
     description: 'Comfortable and stylish jeans for everyday wear.',
+    longdesc: "jhdsfbjdshjdfsvhsdhuisbhb uysguifwevfshfvudfeougervehbvv uyfyguwegfyuwfebsgyasubfhawufgwofweovsvsyfweyu"
   },
   {
     imgSrc:
@@ -23,6 +25,7 @@ const womenProducts = [
     name: 'Summer Blouse',
     price: 29.99,
     description: 'Light and breezy blouse for the perfect summer look.',
+    longdesc: "jhdsfbjdshjdfsvhsdhuisbhb uysguifwevfshfvudfeougervehbvv uyfyguwegfyuwfebsgyasubfhawufgwofweovsvsyfweyu"
   },
   {
     imgSrc:
@@ -30,6 +33,7 @@ const womenProducts = [
     name: 'Sneaker Shoes',
     price: 54.99,
     description: 'Stylish and comfortable sneakers for an active lifestyle.',
+    longdesc: "jhdsfbjdshjdfsvhsdhuisbhb uysguifwevfshfvudfeougervehbvv uyfyguwegfyuwfebsgyasubfhawufgwofweovsvsyfweyu"
   },
   {
     imgSrc:
@@ -37,6 +41,7 @@ const womenProducts = [
     name: 'Classic Handbag',
     price: 44.99,
     description: 'A classic handbag that complements any outfit.',
+    longdesc: "jhdsfbjdshjdfsvhsdhuisbhb uysguifwevfshfvudfeougervehbvv uyfyguwegfyuwfebsgyasubfhawufgwofweovsvsyfweyu"
   },
   {
     imgSrc:
@@ -44,6 +49,7 @@ const womenProducts = [
     name: 'Stylish Hat',
     price: 19.99,
     description: 'A fashionable hat for a trendy look.',
+    longdesc: "jhdsfbjdshjdfsvhsdhuisbhb uysguifwevfshfvudfeougervehbvv uyfyguwegfyuwfebsgyasubfhawufgwofweovsvsyfweyu"
   },
   {
     imgSrc:
@@ -51,6 +57,7 @@ const womenProducts = [
     name: 'Lace Gloves',
     price: 12.99,
     description: 'Elegant lace gloves for a touch of sophistication.',
+    longdesc: "jhdsfbjdshjdfsvhsdhuisbhb uysguifwevfshfvudfeougervehbvv uyfyguwegfyuwfebsgyasubfhawufgwofweovsvsyfweyu"
   },
   {
     imgSrc:
@@ -58,6 +65,7 @@ const womenProducts = [
     name: 'Silver Necklace',
     price: 39.99,
     description: 'A beautiful silver necklace to enhance your style.',
+    longdesc: "jhdsfbjdshjdfsvhsdhuisbhb uysguifwevfshfvudfeougervehbvv uyfyguwegfyuwfebsgyasubfhawufgwofweovsvsyfweyu"
   },
   // You can add more product objects here with descriptions
 ];
@@ -171,6 +179,7 @@ const Women = () => {
             productName={product.name}
             price={product.price}
             productDescription={product.description}
+            longdesc={product.longdesc}
           />
         ))}
       </div>
@@ -178,4 +187,4 @@ const Women = () => {
   );
 };
 
-export default Women;
+export default Women

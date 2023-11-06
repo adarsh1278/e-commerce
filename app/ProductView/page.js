@@ -54,21 +54,8 @@ const ProductView = () => {
        p-4 col-span-2 pt-10"> <h1 className=" text-6xl text-center">{obj.name}</h1> </div>
       <div className="bg-white p-4 col-span-2 row-span-3">
         <h1 className="font-bold text-xl">Description:</h1>
-        <p>
-    2 / 2
-    
-    Certainly, here's a more concise version of the product description for shoes on sale:
-    
-    Discover the "UltraStride Performance Running Shoes" – now on sale!
-    
-    👟 Lightweight and breathable design
-    🌟 Exceptional cushioning for impact reduction
-    👣 Superior traction on various terrains
-    🔥 Stylish, modern design
-    💰 Unbeatable sale price for a limited time
-    
-    Elevate your running experience with top-tier quality, comfort, and style without the premium price tag. Don't miss out on this incredible opportunity to own high-quality running shoes at a discounted price. Order now and hit the track with confidence and style!</p>
-      </div>
+        {productDescription}
+     </div>
       <div className=" bg-slate-300 p-4 text-center hover:translate-y-2 hover:font-bold hover:text-xl">BUY NOW</div>
     
       {/* <!-- Row 2 --> */}

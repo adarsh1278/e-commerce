@@ -3,6 +3,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AddCartProvider } from "../addCartProvider";
 import { addCartContext } from "../context";
+import Link from "next/link";
 
 const AddCart = () => {
   const obj = useContext(addCartContext);
@@ -49,9 +50,9 @@ const AddCart = () => {
   }, [obj.cart]); // Calculate the total price whenever the cart changes
 
   const renderCart = obj.cart.map((t, i) => (
-    <div className="w-screen h-48 bg-slate-200 justify-center" key={i}>
-      <div className="flex bg-slate-200 flex-row p-2 h-full ml-9 justify-center">
-        <div className="flex flex-col w-1/4 justify-center items-center">
+    <div className="w-screen md:h-48 bg-slate-200 justify-center  " key={i}>
+      <div className="flex bg-slate-200 md:flex-row  flex-col p-2 h-full ml-9 justify-center ">
+        <div className="flex flex-col md:w-1/4 justify-center items-center w-screen">
           <img src={t.imageUrl} alt={t.productName} className="product-image h-48 object-contain" />
         </div>
         <div className="px-3 w-2/4 flex flex-col h-full ml-14 p-2">
@@ -59,7 +60,7 @@ const AddCart = () => {
           <div className="p-3">{t.productDescription}</div>
           <div className="p-1 px-3 text-lg text-emerald-700">Price - {t.price}</div>
         </div>
-        <div className="w-full p-3 flex flex-row">
+        <div className="w-full p-3 flex flex-col md:flex-row justify-center items-center">
           <div className="w-1/2 flex flex-col justify-center items-center">
             <div className="font-medium font-sans mt-0 mb-3">Quantity</div>
             <div>
@@ -86,15 +87,23 @@ const AddCart = () => {
               </div>
             </div>
           </div>
-          <div className="flex w-1/4 flex-col items-center justify-center">
+          <div className="flex md:w-1/4 md:flex-col  flex-row items-center   justify-between ml-0 pl-0 ">
+            <Link href="/Buynow" onClick={
+              ()=>{
+               obj.setPrice(t.price)
+
+
+              }
+            }>
             <button
-              class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus-outline-none focus-ring focus-ring-blue-300 focus-ring-opacity-80 w-full text-center my-3"
+              class=" ml-0 md:px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus-outline-none focus-ring focus-ring-blue-300 focus-ring-opacity-80 w-full text-center md:my-3"
             >
               Buy Now
             </button>
-            <div class="flex overflow-hidden bg-white border divide-x rounded-lg rtl-flex-row-reverse">
+            </Link>
+            <div class=" ml-3 flex overflow-hidden bg-white border divide-x rounded-lg rtl-flex-row-reverse">
               <button
-                class="px-4 py-2 text-sm font-medium text-gray-600 transition-colors duration-200 sm-text-base sm-px-6  hover:bg-gray-100"
+                class=" md:px-4 py-2 text-sm font-medium text-gray-600 transition-colors duration-200 sm-text-base sm-px-6  hover:bg-gray-100"
                 onClick={() => {
                   removeProduct(i);
                 }}
@@ -122,11 +131,15 @@ const AddCart = () => {
             <p>GST: ${gst.toFixed(2)}</p>
             <p>Final Price: ${(totalPrice - discount + gst).toFixed(2)}</p>
           </div>
+          <Link href="/Buynow" onClick={()=>{
+            obj.setPrice((totalPrice - discount + gst).toFixed(2))
+          }}> 
+
           <button
             className=" px-6 py-2 font-medium tracking-wide text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 focus-outline-none focus-ring focus-ring-blue-300 focus-ring-opacity-80 w-11/12 text-center my-3 transition-transform duration-300 transform hover:scale-110"
-          >
-            Buy Now
+          >Buy Now
           </button>
+          </Link>
         </div>
       )}
     </AddCartProvider>
