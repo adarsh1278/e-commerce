@@ -37,8 +37,8 @@ const AboutUs = () => {
       </section>
 
       {/* Our Team Section */}
-      <div className='  w-full flex flex-col md:flex-row  drop-shadow-xl shadow-2xl p-8'>
-      <section className="mb-8 bg-white  rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 p-5 w-2/5 mr-5" >
+      <div className='  w-full flex flex-col sm:flex-row  drop-shadow-xl shadow-2xl p-8'>
+      <section className="mb-8 bg-white  rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 p-5   sm:w-2/5   md:mr-14" >
         <h2 className="text-2xl font-bold mb-4">Our Team</h2>
         <ul>
           {teamMembers.map((member, index) => (
@@ -53,7 +53,7 @@ const AboutUs = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section className="bg-white p-4 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 w-2/5">
+      <section className="bg-white p-4 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300  sm:w-2/5">
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
         <form onSubmit={handleFormSubmit} className="w-full max-w-sm">
           <div className="mb-4">

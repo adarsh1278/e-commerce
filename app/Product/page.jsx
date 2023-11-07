@@ -41,6 +41,7 @@ const Product = ({ imageUrl, productName, price, productDescription ,longdesc}) 
 
    obj.setPrice(price)
    obj.setDesc(longdesc)
+   obj.setshortDesc(productDescription);
 
    console.log(obj.name);
   //  console.log(obj.img)

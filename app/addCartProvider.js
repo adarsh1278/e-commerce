@@ -9,6 +9,7 @@ export const AddCartProvider = ({ children }) => {
   const [img, setImge] = useState("");
   const [price, setPrice] = useState("");
   const [desc, setDesc] = useState("");
+  const [shortdesc, setshortDesc] = useState("");
   useEffect(() => {
     // Load cart data from local storage on component mount
     const storedCart = JSON.parse(localStorage.getItem("cart"));
@@ -27,7 +28,7 @@ export const AddCartProvider = ({ children }) => {
   }
 
   return (
-    <addCartContext.Provider value={{ cart, setCart, addCart , name,setName ,img, setImge ,price,setPrice,desc,setDesc}}>
+    <addCartContext.Provider value={{ cart, setCart, addCart , name,setName ,img, setImge ,price,setPrice,desc,setDesc , shortdesc,setshortDesc}}>
       {children}
     </addCartContext.Provider>
   );
