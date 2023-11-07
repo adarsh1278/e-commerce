@@ -47,7 +47,7 @@ const Product = ({ imageUrl, productName, price, productDescription }) => {
   }
 
   return (
-    <div className="w-full md:w-1/2 lg:w-1/3 p-4">
+    <div className="w-full md:w-1/2 lg:w-1/3 p-4 hover:transform hover:scale-105 hover:transition delay-150">
       <div className="max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
         <img src={imageUrl} alt={productName} className="w-full h-48 object-cover" />
         <div className="p-4">

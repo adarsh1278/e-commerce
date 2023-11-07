@@ -44,17 +44,22 @@ const ProductView = () => {
  
   return (
      
-   
-          <div className="md:grid md:grid-cols-4 md:grid-rows-3 gap-4  grid grid-row  pt-24">
+   <div className="md:grid md:grid-cols-4 md:grid-rows-3 gap-4 mr-10 grid grid-row pt-24 mb-8 ml-8 bg-white">
       {/* <!-- Row 1 --> */}
       <div className="bg-blue-200 row-span-3 col-span-2 rounded-lg"> <img src={obj.img}
           alt="Picture of the author"
           className="w-full h-full object-cover rounded-lg"/></div>
-      <div className=" bg-white
-       p-4 col-span-2 pt-10"> <h1 className=" text-6xl text-center">{obj.name}</h1> </div>
+      <div className=" p-4 col-span-2 pt-10 bg-white"> <h1 className=" text-gray-700 font-bold text-5xl">{obj.name}</h1> 
+       <br/>
+       <div className='bg-white'>
+       <span className='text-xl mr-1'>$</span>
+       <span className=' text-sm line-through mr-1'>{price}</span>
+       <span className=' text-2xl text-red-600'>{(price*0.8).toFixed(2)}</span>
+       </div>
+       </div>
       <div className="bg-white p-4 col-span-2 row-span-3">
-        <h1 className="font-bold text-xl">Description:</h1>
-        <p>
+        <h1 className="font-bold text-xl">Description:</h1> <br/>
+        <p className=' text-justify'>
     2 / 2
     
     Certainly, here's a more concise version of the product description for shoes on sale:
@@ -68,17 +73,20 @@ const ProductView = () => {
     💰 Unbeatable sale price for a limited time
     
     Elevate your running experience with top-tier quality, comfort, and style without the premium price tag. Don't miss out on this incredible opportunity to own high-quality running shoes at a discounted price. Order now and hit the track with confidence and style!</p>
+    <div>
+
+    </div>
       </div>
-      <div className=" bg-slate-300 p-4 text-center hover:translate-y-2 hover:font-bold hover:text-xl">BUY NOW</div>
+      <div className="bg-[rgba(53,42,172,0.93)] text-white p-4 text-center hover:transform hover:scale-105 rounded-lg">BUY NOW</div>
     
       {/* <!-- Row 2 --> */}
-      <div className="bg-slate-300 p-4 text-center hover:translate-y-2 hover:font-bold hover:text-xl " onClick={handleAddToCart}>ADD TO CART</div>
+      <div className="bg-[rgba(53,42,172,0.93)] text-white p-4 text-center hover:transform hover:scale-105 rounded-lg" onClick={handleAddToCart}>ADD TO CART</div>
       {showNotification && <Notification message={notificationMessage} />}
       </div>
+          
       )
     }
 
 
  
 export default ProductView;
-
