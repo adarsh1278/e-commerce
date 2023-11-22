@@ -42,7 +42,7 @@ const Header =()=>{
             <button
               onClick={toggleMenu}
               type="button"
-              className="text-gray-500 dark:text-gray-50 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+              className="text-gray-500  hover:text-gray-600  focus:outline-none focus:text-gray-600 "
               aria-label="toggle menu"
             >
               {!isOpen ? (
@@ -84,16 +84,16 @@ const Header =()=>{
           className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center ${isOpen ? 'translate-x-0 opacity-100' : 'opacity-0 -translate-x-full'}`}
         >
           <div className="flex flex-col md:flex-row md:mx-6">
-            <Link href="/Land" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover-text-red-400 md:mx-4 md:my-0">
+            <Link href="/Land" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover-text-red-400 md:mx-4 md:my-0" onClick={toggleMenu}>
               Home
             </Link>
-            <Link href="/men" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover-text-blue-400 md:mx-4 md:my-0">
+            <Link href="/men" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover-text-blue-400 md:mx-4 md:my-0 " onClick={toggleMenu}>
               Men
             </Link>
-            <Link href="/Women" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover-text-blue-400 md:mx-4 md:my-0">
+            <Link href="/Women" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover-text-blue-400 md:mx-4 md:my-0" onClick={toggleMenu}>
               Women
             </Link>
-            <Link href="/About" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover-text-blue-400 md:mx-4 md:my-0">
+            <Link href="/About" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover-text-blue-400 md:mx-4 md:my-0" onClick={toggleMenu}>
               About
             </Link>
           </div>

@@ -11,9 +11,9 @@ const ProductView = () => {
   const [showNotification, setShowNotification] = useState(false);
   let imageUrl = obj.img;
   let productName=obj.name;
-  let productDescription=obj.desc;
+  let productDescription=obj.shortdesc;
   let price=obj.price;
-  let shortdesc = obj.shortdesc;
+  let shortDesc =  obj.desc;
   
   const handleAddToCart = () => {
     const existingProductIndex = obj.cart.findIndex((item) => item.productName === obj.name);
@@ -25,7 +25,8 @@ const ProductView = () => {
       obj.setCart(updatedCart);
     } else {
       // Product with the same name doesn't exist, add it to the cart
-      obj.setCart([...obj.cart, { imageUrl, productName, shortdesc, price, quantity: 1 }]);
+      obj.setCart([...obj.cart, { imageUrl, productName, productDescription, price, quantity: 1 }]);
+      console.log(shortDesc)
     }
 
     setNotificationMessage('Product added successfully!');
@@ -60,7 +61,9 @@ const ProductView = () => {
       <div className="bg-white p-4 col-span-2 row-span-3">
         <h1 className="font-bold text-xl">Description:</h1> <br/>
         <p className=' text-justify'>
-    {productDescription}
+    {shortDesc}
+    <br/>
+    { productDescription }
    </p>
     <div>
 
