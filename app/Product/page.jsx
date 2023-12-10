@@ -1,6 +1,8 @@
 "use client"
 import React, { useContext, useState } from 'react';
 import { addCartContext } from '../context';
+import authService from '@/appwrite/config';
+import { productService } from '@/appwrite/product';
 import Notification from '../Notification/page';
 import ProductView from '../ProductView/page'; // Import ProductView component
 import Link from 'next/link';
@@ -9,8 +11,80 @@ const Product = ({ imageUrl, productName, price, productDescription ,longdesc}) 
   const [notificationMessage, setNotificationMessage] = useState('');
   const [showNotification, setShowNotification] = useState(false);
   const [productViewData, setProductViewData] = useState(null); // State for ProductView
+
+  const update = async () => {
+   
+   
+   
   
-  const handleAddToCart = () => {
+console.log("something below --------------")
+const userdata = await authService.getUser(); 
+console.log("User data --- is below")
+console.log(userdata.$id)
+const userId = userdata.$id;
+console.log("UserData is------ up")
+console.log(userId)
+console.log("something up||||||||")
+
+
+
+
+    try {
+console.log('data given')
+      console.log(userId.userData);
+      console.log("data up ")
+      const userData = await productService.createProductDocument(productName,productDescription,userId)
+     console.log("Suceefully added")
+     
+   
+
+
+    } catch (error) {
+      console.log( error.message);
+   
+    }
+console.log("products given below")
+
+const productList = await productService.listUserDocuments(userId)
+console.log("user id mismatch")
+console.log(productList)
+
+
+
+  };
+ const user = async()=>{
+
+ try {
+  
+const userdata = await authService.getUser(); 
+console.log("User data --- is below")
+console.log(userdata.$id)
+console.log("UserData is------ up")
+return userdata.$id;
+// const productList = await productService.listUserDocuments('6575850dd132e3c6a89c')
+// console.log("user id mismatch")
+// console.log(productList)
+ } catch (error) {
+  console.log(error)
+  console.log("user data error ")
+  return "bhan";
+ }
+
+
+ } 
+
+
+  
+  const handleAddToCart =  async () => {
+        
+
+
+    await update();
+
+
+
+
+
     const existingProductIndex = obj.cart.findIndex((item) => item.productName === productName);
 
     if (existingProductIndex !== -1) {
@@ -22,6 +96,19 @@ const Product = ({ imageUrl, productName, price, productDescription ,longdesc}) 
       // Product with the same name doesn't exist, add it to the cart
       obj.setCart([...obj.cart, { imageUrl, productName, productDescription, price, quantity: 1 }]);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     setNotificationMessage('Product added successfully!');
     setShowNotification(true);

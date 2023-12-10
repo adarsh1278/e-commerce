@@ -1,14 +1,17 @@
 // Import necessary dependencies
 "use client"
 import Image from 'next/image';
-import appwriteService from '@/appwrite/config';
+import authService from '@/appwrite/config';
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { useRouter } from  'next/navigation';
+
 // Define the Login component
-export default function Login() {
-  // State to manage form data
+export default function Signup() {
+  // State to manage form data4
+const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -24,7 +27,7 @@ export default function Login() {
   // Function to create a user account and show a toast notification
   const create = async () => {
     try {
-      const userData = await appwriteService.createUserAccount(formData);
+      const userData = await authService.createAccount(formData);
       console.log(userData);
       toast.success('Signup successful!', {
         position: 'top-right',
@@ -35,6 +38,9 @@ export default function Login() {
         draggable: true,
         progress: undefined,
       });
+     router.push("/Land")
+
+
     } catch (error) {
       console.log('Signup failed:', error.message);
       toast.error(`Signup failed. Please try again.${error.message}`, {
@@ -53,18 +59,7 @@ export default function Login() {
  let loginstatus = "no"
 
   // Check if the user is logged in on component mount
-  useEffect(() => {
-    const checkLoggedIn = async () => {
-      const isLoggedIn = await appwriteService.isLoggedIn();
-      if (isLoggedIn) {
-        loginstatus="yeas"
-      } else {
-        console.log('User is not logged in.');
-      }
-    };
-
-    checkLoggedIn();
-  }, []); // Make sure to pass an empty dependency array to useEffect
+  // Make sure to pass an empty dependency array to useEffect
 
   // Check if the form is valid
   const isFormValid = formData.email && formData.password && formData.name;
